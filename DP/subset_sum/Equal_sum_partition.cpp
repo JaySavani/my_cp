@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool subset_sum(vector<int> arr, int sum)
+bool subset_sum(int arr[], int sum, int n)
 {
-    int n = arr.size();
     bool t[n + 1][sum + 1];
     for (int i = 0; i < n + 1; i++)
     {
@@ -31,23 +30,26 @@ bool subset_sum(vector<int> arr, int sum)
     return t[n][sum];
 }
 
-int main()
+bool equal_sum_par(int a[], int n)
 {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-
-    int n;
-    cin >> n;
-    vector<int> a(n);
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        sum += a[i];
     }
-    int sum;
-    cin >> sum;
+    if (sum % 2 != 0)
+        return 0;
+    else if (sum % 2 == 0)
+    {
+        return subset_sum(a, sum / 2, n);
+    }
+}
 
-    cout
-        << subset_sum(a, sum) << endl;
+int main()
+{
+    int a[] = {2, 4, 6, 1, 4, 1};
+    int n = 6;
+    cout << equal_sum_par(a, n);
 
     return 0;
 }
