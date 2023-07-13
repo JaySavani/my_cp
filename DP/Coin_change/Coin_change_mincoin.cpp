@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// one variant in unbound knapsack we can select coin more then one time in comment
+
+// here we find minimum coins needed for sum
+
 int coin_change_min(vector<int> coins, int sum)
 {
     int n = coins.size();
