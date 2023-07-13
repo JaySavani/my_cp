@@ -32,7 +32,7 @@ int coin_change_min(vector<int> coins, int sum)
             if (coins[i - 1] <= j)
             {
                 t[i][j] = min(1 + t[i][j - coins[i - 1]], t[i - 1][j]);
-                // we have done INT_MAX -1 so that when we do +1 then overflow not occur
+                // we have done INT_MAX-1 so that when we do +1 then overflow not occur
             }
             else
             {
@@ -45,6 +45,9 @@ int coin_change_min(vector<int> coins, int sum)
 
 int main()
 {
+    // vector<int> coins = {1, 7, 10}; for this case greedy will not work so we have to use dp
+    // int sum = 14;
+
     vector<int> coins = {1, 2, 3};
     int sum = 10;
 
