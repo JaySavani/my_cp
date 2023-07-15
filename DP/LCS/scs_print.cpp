@@ -4,7 +4,6 @@ using namespace std;
 string print(vector<vector<int>> &t, string x, string y)
 {
     string ans = "";
-    // int i = x.size() + 1, j = y.size() + 1;
     int i = t.size(), j = t[0].size();
 
     while (i > 0 && j > 0)
@@ -19,14 +18,27 @@ string print(vector<vector<int>> &t, string x, string y)
         {
             if (t[i][j - 1] > t[i - 1][j])
             {
+                ans.push_back(y[j - 1]);
                 j--;
             }
             else
             {
+                ans.push_back(x[i - 1]);
                 i--;
             }
         }
     }
+    while (i > 0)
+    {
+        ans.push_back(x[i - 1]);
+        i--;
+    }
+    while (j > 0)
+    {
+        ans.push_back(y[j - 1]);
+        j--;
+    }
+
     reverse(ans.begin(), ans.end());
     return ans;
 }
