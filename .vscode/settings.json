@@ -2,6 +2,7 @@
     "files.associations": {
         "*.html": "html",
         "vector": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "ostream": "cpp"
     }
 }
