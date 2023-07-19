@@ -7,6 +7,10 @@ using namespace std;
 // so at the end, covert a to lcs no of step=>a.size - lcs // deletion
 // covert lcs to b no of step => b.size-lcs // insertion
 
+//  deletion other variant is if you delete non subsequence char then string become palindrome
+// and if you insert same char then from pair also we can get palindrome
+// so for make palindrome => no of deletion = no of insertion => if we insert then palindrome become big
+
 int lcs_tb(string x, string y, int m, int n)
 {
     vector<vector<int>> t(m + 1, vector<int>(n + 1, -1));
